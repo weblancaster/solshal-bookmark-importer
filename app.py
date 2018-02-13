@@ -6,7 +6,7 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-@app.route("/import/chrome", methods=["POST"])
+@app.route("/chrome/import", methods=["POST"])
 def chrome_importer():
     """Get data in the request and pass to formatter
     then return formatted data to Solshal
@@ -41,7 +41,7 @@ def filter_folders(folders):
             continue
         
         filteredFolders.append({
-            "folder_name": current["title"],
+            "name": current["title"],
             "collections": current["collections"]
         })
     
